@@ -41,7 +41,6 @@ async def on_voice_state_update(member, before, after):
             
 @client.event
 async def on_ready():
-    Client = client.get.partial(CHANNEL', 'REACTION') 
     channel = 983734676365668432
     async for message in channel.history(limit=1):
         if message.author == client.user:
