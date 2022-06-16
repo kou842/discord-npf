@@ -50,14 +50,19 @@ async def on_reaction_add(reaction, user):
 async def on_message(message):
     channel = message.channel
     content = message.content
-    if channel.id == 986992160719130654:
-        if content in "m//":
-            target = '/'
-            idx = content.find(target)
-            comand = content[idx+1:]  # スライスで半角空白文字のインデックス＋1以降を抽出
-            channel.send(";;play "+comand)
+    
     if channel.id == 986992160719130654:
         if content == "s//":
-            channel.send(";;stop ")
+            await channel.send(";;stop")
+    
+    if channel.id == 986992160719130654:
+        idx = content.find('m//')
+        comand = content[idx+3:]  # スライスで半角空白文字のインデックス＋1以降を抽出
+        print (comand)
+        asta = "m//"
+        if  asta in content:
+            print (comand)
+            await channel.send(";;play "+comand)
+    
             
 client.run(TOKEN)
