@@ -46,5 +46,18 @@ async def on_reaction_add(reaction, user):
         await botRoom.send("3人以上の承認が行われたので、早退届・遅刻届を受理致します。お疲れ様でした。")
         
     
-
+@client.event
+async def on_message(message):
+    channel = message.channel
+    content = message.content
+    if channel.id == 986992160719130654:
+        if content in "m//":
+            target = '/'
+            idx = content.find(target)
+            comand = content[idx+1:]  # スライスで半角空白文字のインデックス＋1以降を抽出
+            channel.send(";;play "+comand)
+    if channel.id == 986992160719130654:
+        if content == "s//":
+            channel.send(";;stop ")
+            
 client.run(TOKEN)
