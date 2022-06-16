@@ -42,7 +42,7 @@ async def on_reaction_add(reaction, user):
 
     # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
     botRoom = client.get_channel(983734676365668432)
-    if reaction.count <= 3 and reaction.message.channel.id == 980453265563066398 :
+    if reaction.count == 3 and reaction.message.channel.id == 980453265563066398 :
         await botRoom.send("3人以上の承認が行われたので、早退届・遅刻届を受理致します。お疲れ様でした。")
         
     
