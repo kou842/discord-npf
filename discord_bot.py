@@ -42,10 +42,24 @@ async def on_reaction_add(reaction, user):
 
     # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
     botRoom = client.get_channel(983734676365668432)
-    if reaction.count == 3 and reaction.message.channel.id == 980453265563066398 :
-        await botRoom.send("3人以上の承認が行われたので、早退届・遅刻届を受理致します。お疲れ様でした。")
-        
-    
+    sabun = 0
+    #print(reaction.emoji.id)
+    msid = reaction.message.author.id
+    if user.id != msid :
+        if reaction.emoji.id == 977208213986476093:
+            if reaction.count - sabun == 3 and reaction.message.channel.id == 980453265563066398 :
+                await botRoom.send("3人以上の承認が行われたので、"+reaction.message.author.nick+"早退届・遅刻届を受理致します。お疲れ様でした。")
+        if reaction.emoji.id == 988403148072841236:
+            if reaction.count - sabun == 1 and reaction.message.channel.id == 980453265563066398 :
+                await botRoom.send("ドウェインジョンソン承認が行われたので、"+reaction.message.author.nick+"の早退届・遅刻届を強制受理致します。お疲れしたア。")
+        if reaction.emoji.id == 978485509368188999:
+            if reaction.count - sabun == 3 and reaction.message.channel.id == 980453265563066398 :
+                await botRoom.send("3人以上の差し戻しが行われたので、"+reaction.message.author.nick+"早退届・遅刻届を再投稿お願いします。")
+        if reaction.emoji.id == 988405507595305080:
+            if reaction.count - sabun == 1 and reaction.message.channel.id == 980453265563066398 :
+                await botRoom.send("橋本先生のガン萎えを確認しました。"+reaction.message.author.nick+"強制差し戻し致します。「おーとっやらかしたぁ・・・ チっ　もぉー！」")
+    else :
+        sabun = sabun +1
 @client.event
 async def on_message(message):
     channel = message.channel
