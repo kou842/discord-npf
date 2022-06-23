@@ -1,6 +1,4 @@
-from cgitb import reset
 import discord
-import requests as rs
 
 TOKEN = 'OTgzNjMyNjg2NjEyNjE1MTg4.GUmqQp.TDAzSFqR8sB3ZaJD_I365_4Kv0AuUyky3eBrsw' # TOKENを貼り付け
 CHANNELID = 983734676365668432 # チャンネルIDを貼り付け
