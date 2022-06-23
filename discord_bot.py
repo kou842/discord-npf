@@ -73,7 +73,7 @@ async def on_message(message):
     
     if channel.id == 986992160719130654:
         idx = content.find('m//')
-        comand = content[idx+3:]  # スライスで半角空白文字のインデックス＋1以降を抽出
+        comand = content[idx+3:]  # スライスで半角空白文字のインデックス＋3以降を抽出
         asta = "m//"
         if  asta in content:
             await channel.send(";;play "+comand)
