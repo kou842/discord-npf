@@ -1,4 +1,6 @@
+from cgitb import reset
 import discord
+import requests as rs
 
 TOKEN = 'OTgzNjMyNjg2NjEyNjE1MTg4.G-BRBl.xpMtCDFzXja8n2-OkWDINuW2iRS2-ItTre8URc' # TOKENを貼り付け
 CHANNELID = 983734676365668432 # チャンネルIDを貼り付け
@@ -72,11 +74,16 @@ async def on_message(message):
     if channel.id == 986992160719130654:
         idx = content.find('m//')
         comand = content[idx+3:]  # スライスで半角空白文字のインデックス＋1以降を抽出
-        print (comand)
         asta = "m//"
         if  asta in content:
-            print (comand)
             await channel.send(";;play "+comand)
-    
+            
+    if channel.id == 986992160719130654:
+        idx = content.find('g//')
+        comand = content[idx+3:]  # スライスで半角空白文字のインデックス＋1以降を抽出
+        asta = "g//"
+        if  asta in content:
+            result = "https://game8.jp/genshin/search?q="+comand
+            await channel.send(result)
             
 client.run(TOKEN)
