@@ -16,7 +16,7 @@ async def on_ready():
         print("チャンネル名：" + str(channel.name))
         print("チャンネルID：" + str(channel.id))
         print("----------")
-    for guild in client.guild():
+    
 @client.event
 async def on_message(message):
     messager = message.author.roles
