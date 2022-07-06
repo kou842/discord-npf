@@ -76,6 +76,15 @@ async def on_message(message):
         asta = "m//"
         if  asta in content:
             await channel.send("m!play "+comand)
+            
+@client.event
+async def on_message(message):
+    messager = message.author.roles
+    print (messager)
+    for number  in range(len(messager)):
+        role = messager[number]
+        if role.name == "容疑者（逮捕済み）":
+            await message.delete()
     
             
 client.run(TOKEN)
