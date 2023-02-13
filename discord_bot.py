@@ -1,6 +1,6 @@
 import discord
 
-TOKEN = 'OTgzNjMyNjg2NjEyNjE1MTg4.GUmqQp.TDAzSFqR8sB3ZaJD_I365_4Kv0AuUyky3eBrsw' # TOKENを貼り付け
+TOKEN = 'OTgzNjMyNjg2NjEyNjE1MTg4.G_Rwx0.CZCN8OgXBda5xuiTormmilrpwbyFvHnoLo_GCM' # TOKENを貼り付け
 CHANNELID = 983734676365668432 # チャンネルIDを貼り付け
 GUILD = 964402354805940225
 client = discord.Client()
