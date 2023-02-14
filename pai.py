@@ -11,6 +11,6 @@ async def on_message(message):
     
     if channel.id == 983318451084984430:
         if content == "金谷":
-            await channel.send("消えろ")
+            await channel.send("消えろｄさっだｄさだｓｄ")
             
 client.run(TOKEN)
