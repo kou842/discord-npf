@@ -3,7 +3,7 @@ import discord
 TOKEN = 'OTgzNjMyNjg2NjEyNjE1MTg4.G_Rwx0.CZCN8OgXBda5xuiTormmilrpwbyFvHnoLo_GCM' # TOKENを貼り付け
 CHANNELID = 983734676365668432 # チャンネルIDを貼り付け
 GUILD = 964402354805940225
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.all())
 
 # 起動時処理
 @client.event
